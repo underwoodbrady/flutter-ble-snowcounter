@@ -1,16 +1,9 @@
-# snowcounter
+# Snowcounter BLE
 
-A new Flutter project.
+Flutter mobile app to pair with ESP32 over BLE using [flutter_reactive_ble](https://pub.dev/packages/flutter_reactive_ble) library.
 
-## Getting Started
+Allows for sending data back and forth, specifically Wifi credentials and ski resort selected for the device.
 
-This project is a starting point for a Flutter application.
+## Run this app in your IDE with flutter installed
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
