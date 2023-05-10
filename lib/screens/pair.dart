@@ -1,6 +1,7 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
-//import 'package:flutter/rendering.dart';
-//import 'package:provider/provider.dart';
+import 'package:snowcounter/screens/help.dart';
 
 class PairPage extends StatelessWidget {
   const PairPage({super.key});
@@ -19,8 +20,18 @@ class PairPage extends StatelessWidget {
             children: [
               ElevatedButton.icon(
                   onPressed: () {
-                    ;
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const HelpPage()));
                   },
+                  style: ButtonStyle(
+                    backgroundColor:
+                        MaterialStateProperty.all<Color>(Colors.transparent),
+                    elevation: MaterialStateProperty.all<double>(0),
+                    overlayColor:
+                        MaterialStateProperty.all<Color>(Colors.transparent),
+                  ),
                   icon: const Icon(Icons.question_mark_rounded),
                   label: const Text("Get Help")),
             ],

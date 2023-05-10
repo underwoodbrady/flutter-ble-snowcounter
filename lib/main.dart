@@ -9,7 +9,7 @@ List<String> titles = <String>[
 ];
 
 void main() {
-  runApp(const MyApp());
+  runApp(const MaterialApp(title: "Flutter BLE", home: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -32,21 +32,20 @@ class MyApp extends StatelessWidget {
 }
 
 class MyAppState extends ChangeNotifier {
-  var current = "";
+  var username = "";
+  var password = "";
 
-  void getNext() {
-    current = "next";
+  var selectedResort = "";
+  var pairedDevice = "";
+
+  void updateWifi(String username, String password) {
+    username = username;
+    password = password;
     notifyListeners();
   }
 
-  var favorites = <String>[];
-
-  void toggleFavorite() {
-    if (favorites.contains(current)) {
-      favorites.remove(current);
-    } else {
-      favorites.add(current);
-    }
+  void updateSelectedResort(String resort) {
+    resort = resort;
     notifyListeners();
   }
 }

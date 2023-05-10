@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:snowcounter/screens/settings.dart';
 
 import '../main.dart';
 import '../widgets/device_connected.dart';
@@ -20,15 +21,9 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var appState = context.watch<MyAppState>();
-    var pair = appState.current;
-    String dropdownValue = resorts.first;
-
-    IconData icon;
-    if (appState.favorites.contains(pair)) {
-      icon = Icons.favorite;
-    } else {
-      icon = Icons.favorite_border;
-    }
+    var username = appState.username;
+    var password = appState.password;
+    var resort = appState.selectedResort;
 
     return Padding(
       padding: const EdgeInsets.only(top: 48, left: 24, right: 24, bottom: 24),
@@ -37,9 +32,16 @@ class HomePage extends StatelessWidget {
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
-              DeviceConnected(),
-              Icon(Icons.settings),
+            children: [
+              const DeviceConnected(),
+              IconButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const SettingsPage()));
+                  },
+                  icon: const Icon(Icons.settings)),
             ],
           ),
           const SizedBox(
